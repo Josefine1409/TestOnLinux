@@ -83,8 +83,8 @@ double recursiveIntegrateBidivision( double f(double),double a, double b, double
 	if (error < tolerance) {
 		return Q;
 	} else {
-		double Q1 = recursiveIntegrateBidivision(f, a, (a+b)/2, delta/sqrt(2), epsilon, f1, f2, nrec + 1, variableTransformationFormula);
-		double Q2 = recursiveIntegrateBidivision(f, (a+b)/2, b, delta/sqrt(2), epsilon, f3, f4, nrec + 1, variableTransformationFormula);
+		double Q1 = recursiveIntegrateBidivision(f, a, (a-b)/2, delta/sqrt(2), epsilon, f1, f2, nrec + 1, variableTransformationFormula);
+		double Q2 = recursiveIntegrateBidivision(f, (a-b)/2, b, delta/sqrt(2), epsilon, f3, f4, nrec + 1, variableTransformationFormula);
 		return Q1 + Q2;
 	}
 }
